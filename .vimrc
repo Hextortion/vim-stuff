@@ -16,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
@@ -60,6 +61,17 @@ nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 set background=dark
 if &t_Co >= 256 || has("gui_running")
