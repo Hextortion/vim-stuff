@@ -55,13 +55,14 @@ let mapleader=","
 nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:>-,eol:¬,space:_
+set listchars=tab:▸\ ,eol:¬,space:·
 
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
+" Move between windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -75,7 +76,7 @@ end
 
 set background=dark
 if &t_Co >= 256 || has("gui_running")
-    colorscheme xoria256
+    colorscheme gruvbox
     set colorcolumn=80
     hi ColorColumn ctermbg=237
 endif
