@@ -29,6 +29,10 @@ set autoindent
 set smarttab
 set expandtab "tabs are spaces"
 set number "show line numbers
+set autoread "automatically reread changed files without asking anything
+set laststatus=2
+set splitright
+set splitbelow
 
 filetype indent plugin on "load filteyp-specific indent files
 set autoindent
@@ -57,9 +61,17 @@ nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
+imap jj <Esc>
+nmap <Space> i
+
+let g:ctrlp_working_path_mode = 'a'
+nmap ,. :CtrlPBufTag<CR>
+nmap ,m :CtrlPTag<CR>
 
 set guifont=Consolas\ 16
-set guioptions -=T
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 set background=dark
 if &t_Co >= 256 || has("gui_running")
     " colorscheme distinguished
