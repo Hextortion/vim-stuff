@@ -15,8 +15,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'FuzzyFinder'
-Plugin 'L9'
 
 call vundle#end()
 
@@ -80,7 +78,7 @@ let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
 nmap <leader>. :CtrlPBufTag<CR>
-nmap <leader>m :CtrlPTag<CR>
+nmap <leader>m :FufTag<CR>
 
 let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
