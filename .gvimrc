@@ -10,6 +10,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
@@ -67,6 +69,15 @@ nmap <Space> i
 let g:ctrlp_working_path_mode = 'a'
 nmap <leader>. :CtrlPBufTag<CR>
 nmap <leader>m :CtrlPTag<CR>
+
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 set guifont=Consolas\ 16
 set guioptions-=T
