@@ -88,7 +88,7 @@ if &t_Co >= 256 || has("gui_running")
     " colorscheme distinguished
     " colorscheme gruvbox
     colorscheme Tech49
-    set colorcolumn=80
+    set colorcolumn=81
     " colorscheme xoria256
     " set colorcolumn=80
     " hi ColorColumn ctermbg=237
