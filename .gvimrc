@@ -65,6 +65,13 @@ nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 imap jj <Esc>
 nmap <Space> i
+nmap \q :nohlsearch<CR>
+nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap \E :set expandtab tabstop=3 shiftwidth=3 softtabstop=3<CR>
+nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+nmap \K :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
 
 let g:ctrlp_working_path_mode = 'a'
 nmap <leader>. :CtrlPBufTag<CR>
@@ -74,23 +81,24 @@ let g:airline_right_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep= ''
 let g:airline_left_sep = ''
-let g:airline_theme='wombat'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 set guifont=Consolas\ 16
 set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-set background=dark
+" set guioptions-=r
+" set guioptions-=L
+set background=light
 if &t_Co >= 256 || has("gui_running")
     " colorscheme distinguished
     " colorscheme gruvbox
-    colorscheme Tech49
+    " colorscheme Tech49
+    colorscheme solarized
     set colorcolumn=81
     " colorscheme xoria256
     " set colorcolumn=80
-    " hi ColorColumn ctermbg=237
+    hi ColorColumn ctermfg=237
 endif
 
