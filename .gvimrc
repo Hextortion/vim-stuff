@@ -18,7 +18,7 @@ call vundle#end()
 
 filetype plugin indent on
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 syntax enable
 
@@ -65,8 +65,8 @@ imap jj <Esc>
 nmap <Space> i
 
 let g:ctrlp_working_path_mode = 'a'
-nmap ,. :CtrlPBufTag<CR>
-nmap ,m :CtrlPTag<CR>
+nmap <leader>. :CtrlPBufTag<CR>
+nmap <leader>m :CtrlPTag<CR>
 
 set guifont=Consolas\ 16
 set guioptions-=T
