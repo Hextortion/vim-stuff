@@ -6,7 +6,6 @@ set encoding=utf-8
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-let path='~/.vim/bundle'
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -52,19 +51,23 @@ let mapleader=","
 nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,space:·
+set listchars=tab:▸\ ,eol:¬
 
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
+set guifont=Consolas\ 16
+set guioptions -=T
 set background=dark
 if &t_Co >= 256 || has("gui_running")
-    colorscheme distinguished
+    " colorscheme distinguished
     " colorscheme gruvbox
-    " colorscheme Tech49
+    colorscheme Tech49
+    set colorcolumn=80
     " colorscheme xoria256
     " set colorcolumn=80
     " hi ColorColumn ctermbg=237
 endif
+

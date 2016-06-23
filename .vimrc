@@ -9,16 +9,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mkitt/tabline.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'L9'
-Plugin 'FuzzyFinder'
 
 call vundle#end()
 
@@ -56,36 +50,26 @@ let mapleader=","
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,space:·
+set listchars=tab:▸\ ,eol:¬
 
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
-" Move between windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
-if has("mouse_sgr")
-    set ttymouse=sgr
-else
-    set ttymouse=xterm2
-end
-
+set guifont=Consolas\ 16
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 set background=dark
 if &t_Co >= 256 || has("gui_running")
+    " colorscheme distinguished
     " colorscheme gruvbox
-    " colorscheme Tech49
-    colorscheme xoria256
+    colorscheme Tech49
     set colorcolumn=80
-    hi ColorColumn ctermbg=237
+    " colorscheme xoria256
+    " set colorcolumn=80
+    " hi ColorColumn ctermbg=237
 endif
+
