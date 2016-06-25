@@ -13,7 +13,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -92,19 +91,12 @@ let g:NERDTreeDirArrowCollapsible="~"
 " TagBar Settings
 let g:tagbar_iconchars = ['+', '-']
 
-" Buffergator Settings
-nmap <silent> <leader>k :BuffergatorOpen<CR>
-nmap <silent> <leader>K :BuffergatorClose<CR>
-let g:buffergator_viewport_split_policy='T'
-let g:buffergator_hsplit_size=10
-
 " CtrlP Settings
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
 
-
-set guifont=Consolas\ 20
+set guifont=Ubuntu\ Mono\ 20
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
