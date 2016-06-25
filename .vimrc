@@ -14,6 +14,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -98,6 +100,11 @@ let g:buffergator_hsplit_size=10
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
+
+" Airline Settings
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 set guifont=Consolas\ 20
 set guioptions-=T
