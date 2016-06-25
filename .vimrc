@@ -10,11 +10,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 call vundle#end()
 
@@ -57,51 +56,65 @@ let mapleader=","
 nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:»\ ,eol:¬
 
-nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>b :TagbarToggle<CR>
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 imap jj <Esc>
 nmap <Space> i
+
+" Remove annoying highlight when it is no longer needed
 nmap \q :nohlsearch<CR>
+
+" Various settings for working with other people
 nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nmap \E :set expandtab tabstop=3 shiftwidth=3 softtabstop=3<CR>
 nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
 nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
-nmap \K :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
+nmap \K :set expandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
+nmap \k :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
 
+" NERDTree Settings
+nmap <silent> <leader>t :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+let NERDTreeDirArrows=0
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
+" TagBar Settings
+let g:tagbar_iconchars = ['+', '-']
+
+" Buffergator Settings
+nmap <silent> <leader>k :BuffergatorOpen<CR>
+nmap <silent> <leader>K :BuffergatorClose<CR>
+let g:buffergator_viewport_split_policy='T'
+let g:buffergator_hsplit_size=10
+
+" CtrlP Settings
 let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
-nmap <leader>. :CtrlPBufTag<CR>
-nmap <leader>m :FufTag<CR>
 
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
-let g:airline_left_sep = ''
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
-set guifont=Consolas\ 16
+set guifont=Consolas\ 20
 set guioptions-=T
-" set guioptions-=r
-" set guioptions-=L
-set background=light
+set guioptions-=r
+set guioptions-=L
+set guioptions-=m
+
+set background=dark
 if &t_Co >= 256 || has("gui_running")
-    " colorscheme distinguished
-    " colorscheme gruvbox
-    " colorscheme Tech49
     colorscheme solarized
+    let g:solarized_italic=0
+    let g:solarized_contrast="normal"
     set colorcolumn=81
-    " colorscheme xoria256
-    " set colorcolumn=80
-    hi ColorColumn ctermfg=237
+
+    " This is to have thin splitting lines
+    set fillchars+=vert:│
+    hi Vertsplit ctermbg=NONE guibg=NONE
 endif
+
 
