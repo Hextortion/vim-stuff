@@ -36,6 +36,7 @@ set autoread "automatically reread changed files without asking anything
 set laststatus=2
 set splitright
 set splitbelow
+set ruler
 
 filetype indent plugin on "load filteyp-specific indent files
 set autoindent
@@ -50,6 +51,8 @@ set backspace=indent,eol,start
 set smartcase "except when using capital letters"
 set noswapfile
 set shell=/bin/bash
+
+set tags=tags;
 
 " Leader is comma
 let mapleader=","
@@ -82,7 +85,6 @@ nmap \k :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
-let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 let NERDTreeDirArrows=0
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -101,10 +103,6 @@ let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_use_caching = 1 " enable caching
 let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
 
-" Airline Settings
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
 
 set guifont=Consolas\ 20
 set guioptions-=T
@@ -124,4 +122,8 @@ if &t_Co >= 256 || has("gui_running")
     hi Vertsplit ctermbg=NONE guibg=NONE
 endif
 
-
+" Airline Settings
+let g:airline_theme='monochrome'
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
