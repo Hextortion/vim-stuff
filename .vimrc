@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 
@@ -119,3 +120,8 @@ let g:airline_theme='monochrome'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+" Ack Settings
+if executable('ag')
+    let g:ackprg = 'ag -U -i'
+endif
