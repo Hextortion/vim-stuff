@@ -72,7 +72,12 @@ nnoremap <silent> ,ev :e $MYVIMRC<CR>
 nnoremap <silent> ,sv :so $MYVIMRC<CR>
 inoremap jj <Esc>
 nnoremap <Space> i
-nnoremap <leader>a :Ack  .<left><left>
+nnoremap <leader>a :Ack!  .<left><left>
+nnoremap <leader>z :Ack!<CR>
+nnoremap <PageDown> 10<C-E>
+nnoremap <PageUp> 10<C-Y>
+nnoremap <ScrollWheelUp> 7<C-Y>
+nnoremap <ScrollWheelDown> 7<C-E>
 
 " Remove annoying highlight when it is no longer needed
 nnoremap \q :nohlsearch<CR>
@@ -125,7 +130,7 @@ if &t_Co >= 256 || has("gui_running")
 endif
 
 " Airline Settings
-let g:airline_theme='monochrome'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -134,5 +139,3 @@ let g:airline_right_sep = ''
 if executable('ag')
     let g:ackprg = 'ag -U -i'
 endif
-let g:ack_autoclose = 1
-let g:ackhighlight = 1
