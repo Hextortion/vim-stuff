@@ -58,31 +58,36 @@ set tags=tags;
 let mapleader=","
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:»\ ,eol:¬
 
-nmap <silent> <leader>b :TagbarToggle<CR>
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
-imap jj <Esc>
-nmap <Space> i
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <silent> ,ev :e $MYVIMRC<CR>
+nnoremap <silent> ,sv :so $MYVIMRC<CR>
+inoremap jj <Esc>
+nnoremap <Space> i
+nnoremap <leader>a :Ack  .<left><left>
 
 " Remove annoying highlight when it is no longer needed
-nmap \q :nohlsearch<CR>
+nnoremap \q :nohlsearch<CR>
 
 " Various settings for working with other people
-nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-nmap \E :set expandtab tabstop=3 shiftwidth=3 softtabstop=3<CR>
-nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
-nmap \K :set expandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
-nmap \k :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
+nnoremap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nnoremap \E :set expandtab tabstop=3 shiftwidth=3 softtabstop=3<CR>
+nnoremap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+nnoremap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+nnoremap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+nnoremap \K :set expandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
+nnoremap \k :set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<CR>
 
 " NERDTree Settings
-nmap <silent> <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=0
