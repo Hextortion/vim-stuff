@@ -134,3 +134,5 @@ let g:airline_right_sep = ''
 if executable('ag')
     let g:ackprg = 'ag -U -i'
 endif
+let g:ack_autoclose = 1
+let g:ackhighlight = 1
