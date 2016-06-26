@@ -43,6 +43,8 @@ filetype indent plugin on "load filteyp-specific indent files
 set autoindent
 set showmatch "highlight matching [{()}]
 set lazyredraw
+set ttyfast
+set ttimeoutlen=100
 set showmode
 set mouse=a "enable mouse for all modes
 set incsearch "search as characters are entered
@@ -117,6 +119,7 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set guioptions-=m
+set guioptions-=e
 
 set background=dark
 if &t_Co >= 256 || has("gui_running")
