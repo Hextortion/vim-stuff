@@ -93,11 +93,15 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:tagbar_iconchars = ['+', '-']
 
 " CtrlP Settings
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_use_caching = 1 " enable caching
-let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
+" Use the working directory for this, all other options are very annoying
+let g:ctrlp_cmd='CtrlP :pwd'
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_use_caching = 1
+" Speed up by not removing clearing cache evertime
+let g:ctrlp_clear_cache_on_exit=0 
 
-set guifont=Ubuntu\ Mono\ 20
+" GVim specific options
+set guifont=Consolas\ 20
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
