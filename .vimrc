@@ -16,6 +16,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
+Plugin 'oplatek/Conque-Shell'
 
 call vundle#end()
 
@@ -139,3 +140,4 @@ let g:airline_right_sep = ''
 if executable('ag')
     let g:ackprg = 'ag -U -i'
 endif
+
