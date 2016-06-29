@@ -64,7 +64,7 @@ let mapleader=","
 nnoremap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬,space:·
+set listchars=tab:»\ ,eol:¬,space:·,trail:.
 " set listchars=tab:»\ ,eol:¬
 
 nnoremap <silent> <C-l> <C-w>l
@@ -138,7 +138,7 @@ if has("gui_running")
     hi Vertsplit ctermbg=NONE guibg=NONE
 else
     colorscheme distinguished
-    set fillchars+=vert:│
+    " set fillchars+=vert:│
     let g:airline_theme='distinguished'
     set colorcolumn=81
 endif
