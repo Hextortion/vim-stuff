@@ -16,7 +16,6 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
-Plugin 'oplatek/Conque-Shell'
 
 call vundle#end()
 
@@ -62,9 +61,11 @@ let mapleader=","
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
+set list
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬,space:·,trail:.
+set listchars=tab:»\ ,eol:¬,space:·
+" The below line is just in case space is not supported
 " set listchars=tab:»\ ,eol:¬
 
 nnoremap <silent> <C-l> <C-w>l
@@ -105,6 +106,7 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 " TagBar Settings
 let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_compact = 1
 
 " CtrlP Settings
 " Use the working directory for this, all other options are very annoying
@@ -138,7 +140,7 @@ if has("gui_running")
     hi Vertsplit ctermbg=NONE guibg=NONE
 else
     colorscheme distinguished
-    " set fillchars+=vert:│
+    set fillchars+=vert:│
     let g:airline_theme='distinguished'
     set colorcolumn=81
 endif
