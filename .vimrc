@@ -64,7 +64,8 @@ let mapleader=","
 nnoremap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬
+set listchars=tab:»\ ,eol:¬,space:·
+" set listchars=tab:»\ ,eol:¬
 
 nnoremap <silent> <C-l> <C-w>l
 nnoremap <silent> <C-k> <C-w>k
@@ -112,9 +113,10 @@ let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_use_caching = 1
 " Speed up by not removing clearing cache evertime
 let g:ctrlp_clear_cache_on_exit=0 
+let g:ctrlp_max_files=0
 
 " GVim specific options
-set guifont=Consolas\ 20
+set guifont=Terminus\ 13
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
@@ -122,19 +124,25 @@ set guioptions-=m
 set guioptions-=e
 
 set background=dark
-if &t_Co >= 256 || has("gui_running")
+if has("gui_running")
     colorscheme solarized
     let g:solarized_italic=0
-    let g:solarized_contrast="normal"
+    let g:solarized_contrast="low"
     set colorcolumn=81
+
+    " Airline Settings
+    let g:airline_theme='solarized'
 
     " This is to have thin splitting lines
     set fillchars+=vert:│
     hi Vertsplit ctermbg=NONE guibg=NONE
+else
+    colorscheme distinguished
+    set fillchars+=vert:│
+    let g:airline_theme='distinguished'
+    set colorcolumn=81
 endif
 
-" Airline Settings
-let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
