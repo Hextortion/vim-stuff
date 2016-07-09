@@ -61,7 +61,7 @@ let mapleader=","
 
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
-set list
+set nolist
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:»\ ,eol:¬,space:·
@@ -118,7 +118,7 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_max_files=0
 
 " GVim specific options
-set guifont=Terminus\ 13
+set guifont=Consolas\ 14
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
@@ -129,18 +129,18 @@ set background=dark
 if has("gui_running")
     colorscheme solarized
     let g:solarized_italic=0
-    let g:solarized_contrast="low"
+    let g:solarized_contrast="normal"
     set colorcolumn=81
 
     " Airline Settings
     let g:airline_theme='solarized'
 
     " This is to have thin splitting lines
-    set fillchars+=vert:│
+    set fillchars+=vert:\ 
     hi Vertsplit ctermbg=NONE guibg=NONE
 else
-    colorscheme distinguished
-    set fillchars+=vert:│
+    colorscheme gruvbox
+    set fillchars+=vert:\ 
     let g:airline_theme='distinguished'
     set colorcolumn=81
 endif
