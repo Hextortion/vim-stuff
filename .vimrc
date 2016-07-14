@@ -25,6 +25,7 @@ set clipboard=unnamedplus
 
 syntax enable
 
+set linebreak "don't break words in middle of the line
 set tabstop=4 "number of visual spaces per TAB
 set softtabstop=4 "number of spaces in tab when editing
 set shiftwidth=4
@@ -64,7 +65,7 @@ nnoremap <leader>l :set list!<CR>
 set nolist
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬,space:·
+set listchars=tab:»\ ,space:·
 " The below line is just in case space is not supported
 " set listchars=tab:»\ ,eol:¬
 
@@ -81,14 +82,13 @@ nnoremap <leader>a :Ack!  .<left><left>
 nnoremap <leader>z :Ack!<CR>
 nnoremap <PageDown> 10<C-E>
 nnoremap <PageUp> 10<C-Y>
-nnoremap <ScrollWheelUp> 7<C-Y>
-nnoremap <ScrollWheelDown> 7<C-E>
 
 " Remove annoying highlight when it is no longer needed
 nnoremap \q :nohlsearch<CR>
 
 " Various settings for working with other people
 nnoremap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nnoremap \n :set noexpandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 nnoremap \E :set expandtab tabstop=3 shiftwidth=3 softtabstop=3<CR>
 nnoremap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 nnoremap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
@@ -118,7 +118,7 @@ let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_max_files=0
 
 " GVim specific options
-set guifont=Consolas\ 14
+set guifont=Terminus\ 11
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
@@ -127,22 +127,22 @@ set guioptions-=e
 
 set background=dark
 if has("gui_running")
-    colorscheme solarized
+    colorscheme distinguished
     let g:solarized_italic=0
-    let g:solarized_contrast="normal"
-    set colorcolumn=81
+    let g:solarized_contrast="low"
+    set colorcolumn=80
 
     " Airline Settings
-    let g:airline_theme='solarized'
+    let g:airline_theme='distinguished'
 
     " This is to have thin splitting lines
-    set fillchars+=vert:\ 
-    hi Vertsplit ctermbg=NONE guibg=NONE
+    set fillchars+=vert:│
+    " hi Vertsplit ctermbg=NONE guibg=NONE
 else
-    colorscheme gruvbox
+    colorscheme distinguished
     set fillchars+=vert:\ 
     let g:airline_theme='distinguished'
-    set colorcolumn=81
+    set colorcolumn=80
 endif
 
 let g:airline_powerline_fonts = 0
